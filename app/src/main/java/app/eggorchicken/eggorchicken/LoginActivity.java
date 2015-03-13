@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -26,6 +27,9 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido), "HOLA");
+//        Common.SetFontTextView(this,(TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido));
 
         ImageButton facebook = (ImageButton) findViewById(R.id.activity_login_imagebutton_boton_facebook);
         facebook.setOnClickListener(new View.OnClickListener() {

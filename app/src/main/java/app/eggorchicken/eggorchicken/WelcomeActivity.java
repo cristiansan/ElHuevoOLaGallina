@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -21,12 +22,16 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+        Common.SetFontTextView(this, (TextView)findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido), "HOLA");
+
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(config);
 
         SharedPreferences userDetails = getApplicationContext().getSharedPreferences("userdetails", MODE_PRIVATE);
         String Uname = userDetails.getString("fbFullName", "");
         String Id = userDetails.getString("fbId", "");
+
+        ((TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido)).setText(getString(R.string.activity_welcome_hello));
 
         ((ImageButton) findViewById(R.id.activity_welcome_imagebutton_boton_facebook)).setOnClickListener(new View.OnClickListener() {
             @Override
