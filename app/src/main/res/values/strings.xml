@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HuevoOGallina</string>
+    <string name="app_name">ElHuevoLaGallina</string>
 
     <string name="action_settings">Settings</string>
 
@@ -11,7 +11,7 @@
     <string name="activity_congrats_btn_vuelve">¡VUELVE A JUGAR!</string>
 
     <string name="activity_loose_perdiste">¡PERDISTE!</string>
-    <string name="activity_loose_respondiste10">No respondiste 10 preguntas en menos de 20 segundos.</string>
+    <string name="activity_loose_no_respondiste10">No respondiste 10 preguntas en menos de 20 segundos.</string>
 
     <string name="activity_login_btn_facebook">Ingresa con Facebook</string>
     <string name="activity_login_btn_google">Ingresa con Google</string>

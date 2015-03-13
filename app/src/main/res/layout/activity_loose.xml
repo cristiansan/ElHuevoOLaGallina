@@ -131,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/activity_loose_respondiste10"
+        android:text="@string/activity_loose_no_respondiste10"
         android:id="@+id/activity_loose_textview_no_respondiste"
         android:layout_below="@+id/activity_loose_textview_perdiste"
         android:layout_centerHorizontal="true"
