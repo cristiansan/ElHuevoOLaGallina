@@ -79,10 +79,6 @@ public class FasterAnimationsContainer {
         mIndex = -1;
     }
 
-    public void reset() {
-        mIndex = -1;
-    }
-
     /**
      * add a frame of animation
      *

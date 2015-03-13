@@ -52,6 +52,7 @@ public class MainActivity extends Activity {
             public void onAnimationFrameChanged(int index) {
                 if (index == 20) {
                     mFasterAnimationsContainer.stop();
+                    startActivity(new Intent(MainActivity.this, LoseActivity.class));
                 }
             }
         });
@@ -81,7 +82,6 @@ public class MainActivity extends Activity {
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
                     startActivity();
                 } else {
-                    mFasterAnimationsContainer.reset();
                     mFasterAnimationsContainer.start();
                     getQuestionFromDB();
                 }
