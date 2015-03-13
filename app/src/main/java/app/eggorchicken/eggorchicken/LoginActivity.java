@@ -53,6 +53,7 @@ public class LoginActivity extends Activity {
                                     edit.commit();
 
                                     startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
+                                    finish();
                                 }
                             }).executeAsync();
                         }

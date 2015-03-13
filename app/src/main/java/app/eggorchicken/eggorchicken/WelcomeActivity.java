@@ -29,8 +29,10 @@ public class WelcomeActivity extends Activity {
         String Uname = userDetails.getString("fbFullName", "");
         String Id = userDetails.getString("fbId", "");
 
-        ((TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido)).setText(getString(R.string.activity_welcome_hello));
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido), "HOLA");
+        String strMeatFormat = getResources().getString(R.string.activity_welcome_hello);
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido), String.format(strMeatFormat, Uname));
+
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_facebook), getResources().getString(R.string.activity_welcome_btn_start));
 
         ((ImageButton) findViewById(R.id.activity_welcome_imagebutton_boton_facebook)).setOnClickListener(new View.OnClickListener() {
             @Override

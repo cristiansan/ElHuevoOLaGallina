@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
 
         ImageView rocketImage = (ImageView) findViewById(R.id.activity_main_imageview_reloj);
         mFasterAnimationsContainer = FasterAnimationsContainer.getInstance(rocketImage);
+        mFasterAnimationsContainer.init(rocketImage);
         mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES, ANIMATION_INTERVAL);
         mFasterAnimationsContainer.start();
         mFasterAnimationsContainer.setOnAnimationFrameChangedListener(new FasterAnimationsContainer.OnAnimationFrameChangedListener() {
@@ -53,6 +54,7 @@ public class MainActivity extends Activity {
                 if (index == 20) {
                     mFasterAnimationsContainer.stop();
                     startActivity(new Intent(MainActivity.this, LoseActivity.class));
+                    finish();
                 }
             }
         });
@@ -79,7 +81,9 @@ public class MainActivity extends Activity {
                 questionIndex = questionIndex + 1;
 
                 if (questionIndex > 10) {
+                    mFasterAnimationsContainer.stop();
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
+                    finish();
                     startActivity();
                 } else {
                     mFasterAnimationsContainer.start();
@@ -96,7 +100,7 @@ public class MainActivity extends Activity {
                 int id = getResources().getIdentifier(String.format("activity_main_imageview_answer_waiting%s", questionIndex), "id", getPackageName());
 
                 int idDrawable;
-                if (!is_true) {
+                if (is_true == false) {
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_correct", questionIndex), "drawable", getPackageName());
                 } else {
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_wrong", questionIndex), "drawable", getPackageName());
@@ -106,7 +110,9 @@ public class MainActivity extends Activity {
                 questionIndex = questionIndex + 1;
 
                 if (questionIndex > 10) {
+                    mFasterAnimationsContainer.stop();
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
+                    finish();
                     startActivity();
                 } else {
                     mFasterAnimationsContainer.start();

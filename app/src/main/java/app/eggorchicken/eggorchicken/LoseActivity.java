@@ -38,6 +38,7 @@ public class LoseActivity extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoseActivity.this, MainActivity.class));
+                finish();
             }
         });
 
