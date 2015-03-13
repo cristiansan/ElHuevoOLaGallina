@@ -15,6 +15,8 @@
 
     <string name="activity_login_btn_facebook">Ingresa con Facebook</string>
     <string name="activity_login_btn_google">Ingresa con Google</string>
+    <string name="activity_login_btn_anonimo">Ingresa como Anónimo</string>
+
     <string name="activity_login_bienvenido">¡BIENVENIDO!</string>
     <string name="activity_login_ingresar_usuario">Para jugar debes ingresar con tu usuario</string>
 

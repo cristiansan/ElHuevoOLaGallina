@@ -68,8 +68,8 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:id="@+id/activity_login_imagebutton_boton_google"
-        android:background="@drawable/boton_googleplus"
+        android:id="@+id/activity_login_imagebutton_boton_anonimo"
+        android:background="@drawable/boton_anonimo"
         android:layout_below="@+id/activity_login_imagebutton_boton_facebook"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -97,12 +97,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/activity_login_btn_google"
-        android:id="@+id/activity_login_textview_google"
+        android:id="@+id/activity_login_textview_anonimo"
         android:gravity="center"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/activity_login_imagebutton_boton_google"
+        android:layout_alignTop="@+id/activity_login_imagebutton_boton_anonimo"
         android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/activity_login_imagebutton_boton_google"
+        android:layout_alignBottom="@+id/activity_login_imagebutton_boton_anonimo"
         android:textSize="21dp"
         android:textColor="#ffffff" />
 

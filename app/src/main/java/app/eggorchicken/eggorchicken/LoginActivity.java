@@ -1,7 +1,6 @@
 package app.eggorchicken.eggorchicken;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,8 +15,6 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
 
-import java.util.List;
-
 /**
  * Created by cnc on 11/03/2015.
  */
@@ -28,7 +25,9 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido), "HOLA");
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido), getString(R.string.activity_login_bienvenido));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_tittledown_ingresa_usuario), getString(R.string.activity_login_ingresar_usuario));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_facebook), getString(R.string.activity_login_btn_facebook));
 //        Common.SetFontTextView(this,(TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido));
 
         ImageButton facebook = (ImageButton) findViewById(R.id.activity_login_imagebutton_boton_facebook);
@@ -54,7 +53,6 @@ public class LoginActivity extends Activity {
                                     edit.commit();
 
                                     startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
-                                    startActivity();
                                 }
                             }).executeAsync();
                         }
@@ -64,8 +62,9 @@ public class LoginActivity extends Activity {
             }
 
         });
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_anonimo), getString(R.string.activity_login_btn_anonimo));
 
-        ImageButton google = (ImageButton) findViewById(R.id.activity_login_imagebutton_boton_google);
+        ImageButton google = (ImageButton) findViewById(R.id.activity_login_imagebutton_boton_anonimo);
         google.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -73,7 +72,7 @@ public class LoginActivity extends Activity {
                 ((ProgressBar)findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
 
                 startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
-                startActivity();
+
 
             }
 
