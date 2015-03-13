@@ -136,6 +136,10 @@ public class MainActivity extends Activity {
         ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_main_imageview_avatar));
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     private void getQuestionFromDB() {
         List<Question> values = myDbHelper.getAllQuestion();
         ((TextView) findViewById(R.id.activity_main_textview_question)).setText(values.get(0).getQuestion());

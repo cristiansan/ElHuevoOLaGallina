@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -31,6 +32,8 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+
+                ((ProgressBar)findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
 
                 Session.openActiveSession(LoginActivity.this, true, new Session.StatusCallback() {
                     @Override
@@ -63,6 +66,8 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                ((ProgressBar)findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
+
                 startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
                 startActivity();
 
@@ -75,6 +80,13 @@ public class LoginActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+
+        ((ProgressBar)findViewById(R.id.progressBarSplash)).setVisibility(View.INVISIBLE);
+    }
+
+
+    @Override
+    public void onBackPressed() {
     }
 
     private void startActivity() {
