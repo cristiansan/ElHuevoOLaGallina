@@ -3,6 +3,7 @@ package app.eggorchicken.eggorchicken;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,6 +20,8 @@ import com.facebook.model.GraphUser;
  * Created by cnc on 11/03/2015.
  */
 public class LoginActivity extends Activity {
+
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,14 +73,18 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                ((ProgressBar)findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
+                ((ProgressBar) findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
 
                 startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
-
-
+                finish();
             }
 
         });
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
     }
 
     @Override

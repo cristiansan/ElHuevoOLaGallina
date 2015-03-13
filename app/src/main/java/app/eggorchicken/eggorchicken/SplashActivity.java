@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Base64;
@@ -15,6 +16,8 @@ import java.security.NoSuchAlgorithmException;
 
 
 public class SplashActivity extends Activity {
+
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,13 @@ public class SplashActivity extends Activity {
             }
         }, 2 * 1000); // wait for x seconds
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.gallina_intro_mp3);
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mediaPlayer.start();
+            }
+        });
     }
 
     @Override
