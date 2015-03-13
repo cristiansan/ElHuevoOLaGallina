@@ -7,7 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.facebook.FacebookException;
+import com.facebook.FacebookOperationCanceledException;
+import com.facebook.Session;
+import com.facebook.widget.WebDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -39,6 +44,45 @@ public class LoseActivity extends Activity {
             public void onClick(View v) {
                 startActivity(new Intent(LoseActivity.this, MainActivity.class));
                 finish();
+            }
+        });
+
+        ((ImageButton) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle params = new Bundle();
+                params.putString("name", "El Huevo o la Gallina?");
+                params.putString("caption", "Demuestra si sabes reconocer entre cierto o falso!");
+                params.putString("description", "Tienes 20 segundos para responder la mayor cantidad de afirmaciones reconociendo cuales son verdaderas o falsas! Encuentra una variedad temas muy diferentes para poner a prueba tus conocimientos.\n" +
+                        "Juega ahora y pon aprueba tus conocimientos!.");
+                params.putString("link", "https://play.google.com/store/apps/details?id=com.pmovil.android.apps.trivia");
+//                params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+
+                WebDialog feedDialog = (new WebDialog.FeedDialogBuilder(LoseActivity.this, Session.getActiveSession(), params))
+                        .setOnCompleteListener(new WebDialog.OnCompleteListener() {
+                            @Override
+                            public void onComplete(Bundle values, FacebookException error) {
+                                if (error == null) {
+                                    // When the story is posted, echo the success
+                                    // and the post Id.
+                                    final String postId = values.getString("post_id");
+                                    if (postId != null) {
+                                        Toast.makeText(LoseActivity.this, "Posted story, id: " + postId, Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        // User clicked the Cancel button
+                                        Toast.makeText(LoseActivity.this, "Publish cancelled", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else if (error instanceof FacebookOperationCanceledException) {
+                                    // User clicked the "x" button
+                                    Toast.makeText(LoseActivity.this.getApplicationContext(), "Publish cancelled", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    // Generic, ex: network error
+                                    Toast.makeText(LoseActivity.this.getApplicationContext(), "Error posting story", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .build();
+                feedDialog.show();
             }
         });
 

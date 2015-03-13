@@ -148,6 +148,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Question comment = new Question();
         comment.setId(cursor.getLong(0));
         comment.setQuestion(cursor.getString(1));
+        comment.setCorrect(cursor.getShort(2) == 0 ? false : true);
         return comment;
     }
 }

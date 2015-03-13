@@ -49,11 +49,12 @@ public class WonActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Bundle params = new Bundle();
-                params.putString("name", "Facebook SDK for Android");
-                params.putString("caption", "Build great social apps and get more installs.");
-                params.putString("description", "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
-                params.putString("link", "https://developers.facebook.com/android");
-                params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+                params.putString("name", "El Huevo o la Gallina?");
+                params.putString("caption", "Demuestra si sabes reconocer entre cierto o falso!");
+                params.putString("description", "Tienes 20 segundos para responder la mayor cantidad de afirmaciones reconociendo cuales son verdaderas o falsas! Encuentra una variedad temas muy diferentes para poner a prueba tus conocimientos.\n" +
+                        "Juega ahora y pon aprueba tus conocimientos!.");
+                params.putString("link", "https://play.google.com/store/apps/details?id=com.pmovil.android.apps.trivia");
+//                params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
 
                 WebDialog feedDialog = (new WebDialog.FeedDialogBuilder(WonActivity.this, Session.getActiveSession(), params))
                         .setOnCompleteListener(new WebDialog.OnCompleteListener() {
@@ -80,7 +81,6 @@ public class WonActivity extends Activity {
                         })
                         .build();
                 feedDialog.show();
-
             }
         });
 

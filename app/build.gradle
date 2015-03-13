@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            storeFile file('G:/Users/Horace/Downloads/galicia.key')
+            keyAlias 'galicia'
+            keyPassword '3h0qt0c@'
+            storePassword '3h0qt0c@'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
         applicationId "app.eggorchicken.eggorchicken"
         minSdkVersion 10
@@ -20,7 +27,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.facebook.android:facebook-android-sdk:3.23.1'
     compile 'com.google.apis:google-api-services-plus:v1-rev215-1.19.1'

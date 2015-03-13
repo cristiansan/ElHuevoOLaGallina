@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.SQLException;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -34,6 +36,7 @@ public class MainActivity extends Activity {
 
     private int questionIndex = 1;
     private boolean is_true;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +72,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 int id = getResources().getIdentifier(String.format("activity_main_imageview_answer_waiting%s", questionIndex), "id", getPackageName());
-
                 int idDrawable;
+
                 if (is_true) {
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_correct", questionIndex), "drawable", getPackageName());
                 } else {
@@ -81,6 +84,7 @@ public class MainActivity extends Activity {
                 questionIndex = questionIndex + 1;
 
                 if (questionIndex > 10) {
+                    mediaPlayer.stop();
                     mFasterAnimationsContainer.stop();
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
                     finish();
@@ -98,8 +102,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 int id = getResources().getIdentifier(String.format("activity_main_imageview_answer_waiting%s", questionIndex), "id", getPackageName());
-
                 int idDrawable;
+
                 if (is_true == false) {
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_correct", questionIndex), "drawable", getPackageName());
                 } else {
@@ -110,6 +114,7 @@ public class MainActivity extends Activity {
                 questionIndex = questionIndex + 1;
 
                 if (questionIndex > 10) {
+                    mediaPlayer.stop();
                     mFasterAnimationsContainer.stop();
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
                     finish();
@@ -136,6 +141,14 @@ public class MainActivity extends Activity {
         getQuestionFromDB();
 
         ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_main_imageview_avatar));
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.reloj);
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mediaPlayer.start();
+            }
+        });
     }
 
     @Override
@@ -146,6 +159,7 @@ public class MainActivity extends Activity {
         List<Question> values = myDbHelper.getAllQuestion();
         ((TextView) findViewById(R.id.activity_main_textview_question)).setText(values.get(0).getQuestion());
         is_true = values.get(0).isCorrect();
+        Log.d("D", "is_true = " + is_true);
 
 //        try {
 //            myDbHelper.close();
