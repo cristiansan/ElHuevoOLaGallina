@@ -30,6 +30,7 @@ public class LoseActivity extends Activity {
         String Id = userDetails.getString("fbId", "");
 
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_perdiste), getString(R.string.activity_loose_perdiste));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_no_respondiste), getString(R.string.activity_loose_no_respondiste10));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_btncompartir), getString(R.string.activity_congrats_btn_compartir));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_btn_volver_a_jugar), getString(R.string.activity_congrats_btn_vuelve));
 
