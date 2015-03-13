@@ -96,7 +96,7 @@
         android:id="@+id/activity_welcome_imageview_avatar"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/avatar"
+        android:src="@android:drawable/ic_menu_help"
         android:layout_alignBottom="@+id/activity_welcome_imageview_tira_violeta"
         android:layout_centerHorizontal="true" />
     <!--app:border_width="2dp"
