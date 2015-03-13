@@ -97,7 +97,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff"
         android:textSize="@dimen/abc_text_size_title_material"
-        android:textStyle="bold"
         android:layout_marginTop="10dp" />
 
     <ImageView
