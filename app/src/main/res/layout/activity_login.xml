@@ -37,8 +37,8 @@
         android:id="@+id/activity_login_imageview_logo"
         android:src="@drawable/logo"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/activity_login_imagebutton_boton_google"
-        android:layout_alignStart="@+id/activity_login_imagebutton_boton_google" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="wrap_content"
