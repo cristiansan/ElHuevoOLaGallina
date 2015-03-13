@@ -65,8 +65,6 @@ public class MainActivity extends Activity {
         verdadero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mFasterAnimationsContainer.stop();
-
                 int id = getResources().getIdentifier(String.format("activity_main_imageview_answer_waiting%s", questionIndex), "id", getPackageName());
 
                 int idDrawable;
@@ -80,7 +78,7 @@ public class MainActivity extends Activity {
                 questionIndex = questionIndex + 1;
 
                 if (questionIndex > 10) {
-                    startActivity(new Intent(MainActivity.this, CongratsActivity.class));
+                    startActivity(new Intent(MainActivity.this, WonActivity.class));
                     startActivity();
                 } else {
                     mFasterAnimationsContainer.reset();
@@ -95,8 +93,6 @@ public class MainActivity extends Activity {
         falso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mFasterAnimationsContainer.stop();
-
                 int id = getResources().getIdentifier(String.format("activity_main_imageview_answer_waiting%s", questionIndex), "id", getPackageName());
 
                 int idDrawable;
@@ -110,7 +106,7 @@ public class MainActivity extends Activity {
                 questionIndex = questionIndex + 1;
 
                 if (questionIndex > 10) {
-                    startActivity(new Intent(MainActivity.this, CongratsActivity.class));
+                    startActivity(new Intent(MainActivity.this, WonActivity.class));
                     startActivity();
                 } else {
                     mFasterAnimationsContainer.start();

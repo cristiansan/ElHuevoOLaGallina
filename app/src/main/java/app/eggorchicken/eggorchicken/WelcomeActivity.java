@@ -22,8 +22,6 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        Common.SetFontTextView(this, (TextView)findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido), "HOLA");
-
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(config);
 
@@ -32,6 +30,7 @@ public class WelcomeActivity extends Activity {
         String Id = userDetails.getString("fbId", "");
 
         ((TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido)).setText(getString(R.string.activity_welcome_hello));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido), "HOLA");
 
         ((ImageButton) findViewById(R.id.activity_welcome_imagebutton_boton_facebook)).setOnClickListener(new View.OnClickListener() {
             @Override
