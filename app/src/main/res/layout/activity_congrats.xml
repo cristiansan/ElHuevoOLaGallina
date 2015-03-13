@@ -70,7 +70,7 @@
         android:layout_above="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
         android:layout_alignLeft="@+id/activity_loose_textview_no_respondiste"
         android:layout_alignStart="@+id/activity_loose_textview_no_respondiste"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
 
