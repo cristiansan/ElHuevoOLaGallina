@@ -90,26 +90,28 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/activity_congrats_btn_compartir"
-        android:id="@+id/textView"
+        android:id="@+id/activity_congrats_textview_compartir"
         android:gravity="center"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_compartir"
         android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/activity_congrats_btn_vuelve"
-        android:id="@+id/textView2"
+        android:id="@+id/activity_congrats_textview_volver_a_jugar"
         android:gravity="center"
         android:textStyle="bold"
         android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-        android:textSize="21dp" />
+        android:textSize="21dp"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -143,7 +145,7 @@
         android:id="@+id/activity_congrats_imageview_avatar"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/avatar"
+        android:src="@android:drawable/ic_menu_help"
         android:layout_above="@+id/activity_congrats_textview_perdiste"
         android:layout_alignLeft="@+id/activity_congrats_imageview_logo"
         android:layout_alignStart="@+id/activity_congrats_imageview_logo"

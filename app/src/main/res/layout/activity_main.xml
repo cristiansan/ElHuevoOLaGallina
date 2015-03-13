@@ -121,7 +121,7 @@
         android:id="@+id/activity_main_imageview_avatar"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/avatar"
+        android:src="@android:drawable/ic_menu_help"
         android:layout_alignBottom="@+id/activity_main_imageview_tira_violeta"
         android:layout_alignLeft="@+id/activity_main_imageview_logo"
         android:layout_alignStart="@+id/activity_main_imageview_logo"
