@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
                                     edit.putString("fbId", graphUser.getId().toString().trim());
                                     edit.commit();
 
-                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
                                     startActivity();
                                 }
                             }).executeAsync();
@@ -63,7 +63,7 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
                 startActivity();
 
             }
