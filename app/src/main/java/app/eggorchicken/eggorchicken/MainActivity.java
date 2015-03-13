@@ -40,8 +40,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
-        ImageLoader.getInstance().init(config);
+//        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
+//        ImageLoader.getInstance().init(config);
 
         ImageView rocketImage = (ImageView) findViewById(R.id.activity_main_imageview_reloj);
         mFasterAnimationsContainer = FasterAnimationsContainer.getInstance(rocketImage);

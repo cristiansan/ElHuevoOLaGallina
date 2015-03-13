@@ -18,7 +18,7 @@
     <string name="activity_login_bienvenido">¡BIENVENIDO!</string>
     <string name="activity_login_ingresar_usuario">Para jugar debes ingresar con tu usuario</string>
 
-    <string name="activity_welcome_hello">¡HOLA, %1$!</string>
+    <string name="activity_welcome_hello">¡HOLA, %1$s!</string>
     <string name="activity_welcome_btn_start">¡EMPEZAR A JUGAR!</string>
 
 
