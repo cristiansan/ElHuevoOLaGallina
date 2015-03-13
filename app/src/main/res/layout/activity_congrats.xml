@@ -68,9 +68,11 @@
         android:id="@+id/activity_congrats_imagebutton_boton_compartir"
         android:background="@drawable/boton_compartir"
         android:layout_above="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_marginBottom="20dp" />
+        android:layout_alignLeft="@+id/activity_loose_textview_no_respondiste"
+        android:layout_alignStart="@+id/activity_loose_textview_no_respondiste"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -114,11 +116,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/activity_congrats_felicitaciones"
-        android:id="@+id/textView3"
+        android:text="@string/activity_congrats_ganaste"
+        android:id="@+id/activity_congrats_textview_perdiste"
         android:textStyle="bold"
-        android:textSize="35dp"
-        android:textColor="#730ead"
+        android:textSize="45dp"
+        android:textColor="#00e676"
         android:textIsSelectable="false"
         android:layout_below="@+id/activity_congrats_imageview_reloj"
         android:layout_centerHorizontal="true" />
@@ -128,11 +130,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/activity_congrats_respondiste10"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
+        android:id="@+id/activity_congrats_textview_no_respondiste"
+        android:layout_below="@+id/activity_congrats_textview_perdiste"
         android:layout_centerHorizontal="true"
         android:textColor="#730ead"
-        android:textSize="25dp"
+        android:textSize="22dp"
         android:gravity="center"
         android:textStyle="bold" />
 
@@ -141,7 +143,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:src="@drawable/avatar"
-        android:layout_above="@+id/textView3"
+        android:layout_above="@+id/activity_congrats_textview_perdiste"
         android:layout_alignLeft="@+id/activity_congrats_imageview_logo"
         android:layout_alignStart="@+id/activity_congrats_imageview_logo" />
     <!--app:border_width="2dp"
