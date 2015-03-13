@@ -1,0 +1,24 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/reloj0" android:duration="1000" />
+    <item android:drawable="@drawable/reloj1" android:duration="1000" />
+    <item android:drawable="@drawable/reloj2" android:duration="1000" />
+    <item android:drawable="@drawable/reloj3" android:duration="1000" />
+    <item android:drawable="@drawable/reloj4" android:duration="1000" />
+    <item android:drawable="@drawable/reloj5" android:duration="1000" />
+    <item android:drawable="@drawable/reloj6" android:duration="1000" />
+    <item android:drawable="@drawable/reloj7" android:duration="1000" />
+    <item android:drawable="@drawable/reloj8" android:duration="1000" />
+    <item android:drawable="@drawable/reloj9" android:duration="1000" />
+    <item android:drawable="@drawable/reloj10" android:duration="1000" />
+    <item android:drawable="@drawable/reloj11" android:duration="1000" />
+    <item android:drawable="@drawable/reloj12" android:duration="1000" />
+    <item android:drawable="@drawable/reloj13" android:duration="1000" />
+    <item android:drawable="@drawable/reloj14" android:duration="1000" />
+    <item android:drawable="@drawable/reloj15" android:duration="1000" />
+    <item android:drawable="@drawable/reloj16" android:duration="1000" />
+    <item android:drawable="@drawable/reloj17" android:duration="1000" />
+    <item android:drawable="@drawable/reloj18" android:duration="1000" />
+    <item android:drawable="@drawable/reloj19" android:duration="1000" />
+    <item android:drawable="@drawable/reloj20" android:duration="1000" />
+</animation-list>

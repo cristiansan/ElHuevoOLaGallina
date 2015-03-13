@@ -1,0 +1,106 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".WelcomeActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:id="@+id/activity_welcome_imageview_tira_violeta"
+        android:src="@drawable/tira_violeta"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_welcome_imageview_actionbar"
+        android:src="@drawable/actionbar"
+        android:layout_alignBottom="@+id/activity_welcome_imageview_logo"
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:id="@+id/activity_welcome_imageview_logo"
+        android:src="@drawable/logo"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_welcome_imageview_huevo_gallina_titulo"
+        android:src="@drawable/huevo_gallina_titulo"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/activity_welcome_imageview_logo"
+        android:layout_toEndOf="@+id/activity_welcome_imageview_logo"
+        android:paddingRight="10dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:id="@+id/activity_welcome_imagebutton_boton_facebook"
+        android:background="@drawable/boton_jugar"
+        android:layout_below="@+id/activity_welcome_imageview_tira_violeta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/activity_welcome_btn_start"
+        android:id="@+id/activity_welcome_textview_facebook"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/activity_welcome_imagebutton_boton_facebook"
+        android:layout_alignTop="@+id/activity_welcome_imagebutton_boton_facebook"
+        android:textSize="22dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/activity_welcome_hello"
+        android:id="@+id/activity_welcome_textview_tittle_top_bienvenido"
+        android:layout_below="@+id/activity_welcome_imageview_actionbar"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:gravity="center" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/activity_welcome_imageview_avatar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/avatar"
+        android:layout_alignBottom="@+id/activity_welcome_imageview_tira_violeta"
+        android:layout_centerHorizontal="true" />
+    <!--app:border_width="2dp"
+        app:border_color="#40cea9"-->
+
+
+</RelativeLayout>
