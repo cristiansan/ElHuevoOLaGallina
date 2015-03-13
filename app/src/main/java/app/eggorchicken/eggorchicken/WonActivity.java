@@ -32,7 +32,9 @@ public class WonActivity extends Activity {
         SharedPreferences userDetails = getApplicationContext().getSharedPreferences("userdetails", MODE_PRIVATE);
         String Uname = userDetails.getString("fbFullName", "");
         String Id = userDetails.getString("fbId", "");
-
+        
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_ganaste), getString(R.string.activity_congrats_ganaste));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_si_respondiste), getString(R.string.activity_congrats_respondiste10));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_compartir), getString(R.string.activity_congrats_btn_compartir));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_volver_a_jugar), getString(R.string.activity_congrats_btn_vuelve));
 
