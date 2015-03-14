@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,6 +36,7 @@ public class MainActivity extends Activity {
     private int questionIndex = 1;
     private boolean is_true;
     private MediaPlayer mediaPlayer;
+    private MediaPlayer mal_conestado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,21 +46,21 @@ public class MainActivity extends Activity {
 //        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
 //        ImageLoader.getInstance().init(config);
 
-        ImageView rocketImage = (ImageView) findViewById(R.id.activity_main_imageview_reloj);
-        mFasterAnimationsContainer = FasterAnimationsContainer.getInstance(rocketImage);
-        mFasterAnimationsContainer.init(rocketImage);
-        mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES, ANIMATION_INTERVAL);
-        mFasterAnimationsContainer.start();
-        mFasterAnimationsContainer.setOnAnimationFrameChangedListener(new FasterAnimationsContainer.OnAnimationFrameChangedListener() {
-            @Override
-            public void onAnimationFrameChanged(int index) {
-                if (index == 20) {
-                    mFasterAnimationsContainer.stop();
-                    startActivity(new Intent(MainActivity.this, LoseActivity.class));
-                    finish();
-                }
-            }
-        });
+//        ImageView rocketImage = (ImageView) findViewById(R.id.activity_main_imageview_reloj);
+//        mFasterAnimationsContainer = FasterAnimationsContainer.getInstance(rocketImage);
+//        mFasterAnimationsContainer.init(rocketImage);
+//        mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES, ANIMATION_INTERVAL);
+//        mFasterAnimationsContainer.start();
+//        mFasterAnimationsContainer.setOnAnimationFrameChangedListener(new FasterAnimationsContainer.OnAnimationFrameChangedListener() {
+//            @Override
+//            public void onAnimationFrameChanged(int index) {
+//                if (index == 20) {
+//                    mFasterAnimationsContainer.stop();
+//                    startActivity(new Intent(MainActivity.this, LoseActivity.class));
+//                    finish();
+//                }
+//            }
+//        });
 
         SharedPreferences userDetails = getApplicationContext().getSharedPreferences("userdetails", MODE_PRIVATE);
         String Uname = userDetails.getString("fbFullName", "");
@@ -77,6 +77,7 @@ public class MainActivity extends Activity {
                 if (is_true) {
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_correct", questionIndex), "drawable", getPackageName());
                 } else {
+                    mal_conestado.start();
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_wrong", questionIndex), "drawable", getPackageName());
                 }
                 ((ImageView) findViewById(id)).setImageResource(idDrawable);
@@ -107,6 +108,7 @@ public class MainActivity extends Activity {
                 if (is_true == false) {
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_correct", questionIndex), "drawable", getPackageName());
                 } else {
+                    mal_conestado.start();
                     idDrawable = getResources().getIdentifier(String.format("answer_%s_wrong", questionIndex), "drawable", getPackageName());
                 }
                 ((ImageView) findViewById(id)).setImageResource(idDrawable);
@@ -143,12 +145,7 @@ public class MainActivity extends Activity {
         ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_main_imageview_avatar));
 
         mediaPlayer = MediaPlayer.create(this, R.raw.reloj);
-        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mediaPlayer.start();
-            }
-        });
+        mal_conestado = MediaPlayer.create(this, R.raw.mal_conestado);
     }
 
     @Override
@@ -157,7 +154,9 @@ public class MainActivity extends Activity {
 
     private void getQuestionFromDB() {
         List<Question> values = myDbHelper.getAllQuestion();
-        ((TextView) findViewById(R.id.activity_main_textview_question)).setText(values.get(0).getQuestion());
+
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_main_textview_question), values.get(0).getQuestion());
+//        ((TextView) findViewById(R.id.activity_main_textview_question)).setText(values.get(0).getQuestion());
         is_true = values.get(0).isCorrect();
         Log.d("D", "is_true = " + is_true);
 
@@ -172,7 +171,12 @@ public class MainActivity extends Activity {
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-//        rocketAnimation.start();
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mediaPlayer.start();
+            }
+        });
     }
 
     @Override

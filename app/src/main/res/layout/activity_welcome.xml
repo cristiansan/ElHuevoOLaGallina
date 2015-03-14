@@ -92,15 +92,14 @@
         android:textSize="35dp"
         android:gravity="center" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/activity_welcome_imageview_avatar"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:src="@android:drawable/ic_menu_help"
         android:layout_alignBottom="@+id/activity_welcome_imageview_tira_violeta"
-        android:layout_centerHorizontal="true" />
-    <!--app:border_width="2dp"
-        app:border_color="#40cea9"-->
-
+        android:layout_centerHorizontal="true"
+        app:border_width="5dp"
+        app:border_color="#730EAD" />
 
 </RelativeLayout>

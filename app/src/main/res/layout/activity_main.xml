@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
 
     <ImageView
@@ -118,6 +118,7 @@
         android:src="@drawable/huevo_gallina_titulo" />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/activity_main_imageview_avatar"
         android:layout_width="75dp"
         android:layout_height="75dp"
@@ -125,9 +126,9 @@
         android:layout_alignBottom="@+id/activity_main_imageview_tira_violeta"
         android:layout_alignLeft="@+id/activity_main_imageview_logo"
         android:layout_alignStart="@+id/activity_main_imageview_logo"
-        android:layout_marginLeft="10dp" />
-    <!--app:border_width="2dp"
-        app:border_color="#40cea9"-->
+        android:layout_marginLeft="10dp"
+        app:border_width="5dp"
+        app:border_color="#730EAD" />
 
     <ImageView
         android:layout_width="22dp"

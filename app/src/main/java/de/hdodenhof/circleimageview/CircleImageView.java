@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -47,6 +48,8 @@ public class CircleImageView extends ImageView {
     private float mDrawableRadius;
     private float mBorderRadius;
 
+    private ColorFilter mColorFilter;
+
     private boolean mReady;
     private boolean mSetupPending;
 
@@ -63,14 +66,12 @@ public class CircleImageView extends ImageView {
     public CircleImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        //color de bordes
-
-        /*TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView, defStyle, 0);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView, defStyle, 0);
 
         mBorderWidth = a.getDimensionPixelSize(R.styleable.CircleImageView_border_width, DEFAULT_BORDER_WIDTH);
         mBorderColor = a.getColor(R.styleable.CircleImageView_border_color, DEFAULT_BORDER_COLOR);
 
-        a.recycle();*/
+        a.recycle();
 
         init();
     }
@@ -175,6 +176,17 @@ public class CircleImageView extends ImageView {
         super.setImageURI(uri);
         mBitmap = getBitmapFromDrawable(getDrawable());
         setup();
+    }
+
+    @Override
+    public void setColorFilter(ColorFilter cf) {
+        if (cf == mColorFilter) {
+            return;
+        }
+
+        mColorFilter = cf;
+        mBitmapPaint.setColorFilter(mColorFilter);
+        invalidate();
     }
 
     private Bitmap getBitmapFromDrawable(Drawable drawable) {

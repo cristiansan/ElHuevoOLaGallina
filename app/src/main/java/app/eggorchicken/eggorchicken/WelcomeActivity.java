@@ -38,9 +38,12 @@ public class WelcomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                finish();
             }
         });
 
         ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_welcome_imageview_avatar));
+
+        System.gc();
     }
 }

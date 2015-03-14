@@ -14,7 +14,6 @@ import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Session;
 import com.facebook.widget.WebDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -55,7 +54,7 @@ public class LoseActivity extends Activity {
                 params.putString("caption", "Demuestra si sabes reconocer entre cierto o falso!");
                 params.putString("description", "Tienes 20 segundos para responder la mayor cantidad de afirmaciones reconociendo cuales son verdaderas o falsas! Encuentra una variedad temas muy diferentes para poner a prueba tus conocimientos.\n" +
                         "Juega ahora y pon aprueba tus conocimientos!.");
-                params.putString("link", "https://play.google.com/store/apps/details?id=com.pmovil.android.apps.trivia");
+                params.putString("link", "https://play.google.com/store/apps/details?id=app.eggorchicken.eggorchicken");
 //                params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
 
                 WebDialog feedDialog = (new WebDialog.FeedDialogBuilder(LoseActivity.this, Session.getActiveSession(), params))
