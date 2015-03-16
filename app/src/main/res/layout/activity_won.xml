@@ -59,60 +59,6 @@
         android:layout_toEndOf="@+id/activity_congrats_imageview_logo"
         android:paddingRight="10dp" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:id="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:background="@drawable/boton_compartir"
-        android:layout_above="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:id="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-        android:background="@drawable/boton_volver_a_jugar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:layout_alignEnd="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:layout_alignLeft="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:layout_alignStart="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:layout_marginBottom="55dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/activity_congrats_btn_compartir"
-        android:id="@+id/activity_congrats_textview_compartir"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:textSize="22dp"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/activity_congrats_btn_vuelve"
-        android:id="@+id/activity_congrats_textview_volver_a_jugar"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-        android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-        android:textSize="21dp"
-        android:textColor="#ffffff" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -255,5 +201,84 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/ad_unit_id">
     </com.google.android.gms.ads.AdView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/activity_congrats_textview_si_respondiste"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/adView">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:id="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:background="@drawable/boton_compartir"
+                android:layout_above="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/activity_congrats_btn_compartir"
+                android:id="@+id/activity_congrats_textview_compartir"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:textSize="22dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="top|center_horizontal" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:id="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
+                android:background="@drawable/boton_volver_a_jugar"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:layout_alignEnd="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:layout_alignLeft="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:layout_alignStart="@+id/activity_congrats_imagebutton_boton_compartir"
+                android:layout_marginBottom="55dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/activity_congrats_btn_vuelve"
+                android:id="@+id/activity_congrats_textview_volver_a_jugar"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
+                android:textSize="21dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal|top" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
