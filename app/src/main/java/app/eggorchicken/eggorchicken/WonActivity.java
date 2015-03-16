@@ -13,6 +13,7 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Session;
 import com.facebook.widget.WebDialog;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -99,7 +100,13 @@ public class WonActivity extends Activity {
 
 
         mAdView = (AdView) findViewById(R.id.adView);
-        mAdView.setAdListener(new ToastAdListener(this));
+            mAdView.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                    mAdView.setVisibility(View.VISIBLE);
+                }
+        });
+
         mAdView.loadAd(new AdRequest.Builder().build());
     }
 }

@@ -13,6 +13,9 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Session;
 import com.facebook.widget.WebDialog;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -21,6 +24,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by XXX on 3/13/2015.
  */
 public class LoseActivity extends Activity {
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,5 +97,15 @@ public class LoseActivity extends Activity {
             ((TextView) findViewById(R.id.activity_loose_textview_btncompartir)).setVisibility(View.INVISIBLE);
             ((ImageButton) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
         }
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                mAdView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mAdView.loadAd(new AdRequest.Builder().build());
     }
 }
