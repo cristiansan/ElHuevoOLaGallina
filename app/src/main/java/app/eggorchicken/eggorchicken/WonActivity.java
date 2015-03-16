@@ -85,7 +85,13 @@ public class WonActivity extends Activity {
             }
         });
 
-        ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_congrats_imageview_avatar));
+        if (!Uname.contentEquals("")) {
+            ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_congrats_imageview_avatar));
+        } else {
+            ((CircleImageView) findViewById(R.id.activity_congrats_imageview_avatar)).setVisibility(View.INVISIBLE);
+            ((TextView) findViewById(R.id.activity_congrats_textview_compartir)).setVisibility(View.INVISIBLE);
+            ((ImageButton) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
+        }
 
     }
 }

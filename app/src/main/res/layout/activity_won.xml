@@ -142,6 +142,7 @@
         android:layout_marginRight="5dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/activity_congrats_imageview_avatar"
         android:layout_width="75dp"
         android:layout_height="75dp"
@@ -149,9 +150,9 @@
         android:layout_above="@+id/activity_congrats_textview_ganaste"
         android:layout_alignLeft="@+id/activity_congrats_imageview_logo"
         android:layout_alignStart="@+id/activity_congrats_imageview_logo"
-        android:layout_marginLeft="10dp" />
-    <!--app:border_width="2dp"
-        app:border_color="#40cea9"-->
+        android:layout_marginLeft="10dp"
+        app:border_width="5dp"
+        app:border_color="#730EAD" />
 
     <ImageView
         android:layout_width="22dp"

@@ -75,7 +75,7 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 ((ProgressBar) findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
 
-                startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
             }
 

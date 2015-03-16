@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.database.SQLException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,19 +23,11 @@ public class MainActivity extends Activity {
 
     DataBaseHelper myDbHelper = new DataBaseHelper(this);
 
-    FasterAnimationsContainer mFasterAnimationsContainer;
-    private static final int[] IMAGE_RESOURCES = {R.drawable.reloj20, R.drawable.reloj19, R.drawable.reloj18, R.drawable.reloj17, R.drawable.reloj16,
-                                                  R.drawable.reloj15, R.drawable.reloj14, R.drawable.reloj13, R.drawable.reloj12, R.drawable.reloj11,
-                                                  R.drawable.reloj10, R.drawable.reloj9, R.drawable.reloj8, R.drawable.reloj7,R.drawable.reloj6,
-                                                  R.drawable.reloj5, R.drawable.reloj4, R.drawable.reloj3, R.drawable.reloj2, R.drawable.reloj1,
-                                                  R.drawable.reloj0};
-
-    private static final int ANIMATION_INTERVAL = 1000;// 500ms
-
     private int questionIndex = 1;
     private boolean is_true;
     private MediaPlayer mediaPlayer;
     private MediaPlayer mal_conestado;
+    private AnimationsContainer.FramesSequenceAnimation anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,21 +37,17 @@ public class MainActivity extends Activity {
 //        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
 //        ImageLoader.getInstance().init(config);
 
-//        ImageView rocketImage = (ImageView) findViewById(R.id.activity_main_imageview_reloj);
-//        mFasterAnimationsContainer = FasterAnimationsContainer.getInstance(rocketImage);
-//        mFasterAnimationsContainer.init(rocketImage);
-//        mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES, ANIMATION_INTERVAL);
-//        mFasterAnimationsContainer.start();
-//        mFasterAnimationsContainer.setOnAnimationFrameChangedListener(new FasterAnimationsContainer.OnAnimationFrameChangedListener() {
-//            @Override
-//            public void onAnimationFrameChanged(int index) {
-//                if (index == 20) {
-//                    mFasterAnimationsContainer.stop();
-//                    startActivity(new Intent(MainActivity.this, LoseActivity.class));
-//                    finish();
-//                }
-//            }
-//        });
+        ImageView rocketImage = (ImageView) findViewById(R.id.activity_main_imageview_reloj);
+        anim = AnimationsContainer.getInstance().createProgressDialogAnim(rocketImage);
+        anim.setOnClickListener(new AnimationsContainer.OnAnimationStoppedListener() {
+            @Override
+            public void AnimationStopped() {
+                anim.stop();
+                startActivity(new Intent(MainActivity.this, LoseActivity.class));
+                finish();
+            }
+        });
+        anim.start();
 
         SharedPreferences userDetails = getApplicationContext().getSharedPreferences("userdetails", MODE_PRIVATE);
         String Uname = userDetails.getString("fbFullName", "");
@@ -86,12 +73,12 @@ public class MainActivity extends Activity {
 
                 if (questionIndex > 10) {
                     mediaPlayer.stop();
-                    mFasterAnimationsContainer.stop();
+                    anim.stop();
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
                     finish();
                     startActivity();
                 } else {
-                    mFasterAnimationsContainer.start();
+                    anim.start();
                     getQuestionFromDB();
                 }
             }
@@ -117,12 +104,12 @@ public class MainActivity extends Activity {
 
                 if (questionIndex > 10) {
                     mediaPlayer.stop();
-                    mFasterAnimationsContainer.stop();
+                    anim.stop();
                     startActivity(new Intent(MainActivity.this, WonActivity.class));
                     finish();
                     startActivity();
                 } else {
-                    mFasterAnimationsContainer.start();
+                    anim.start();
                     getQuestionFromDB();
                 }
             }
@@ -142,7 +129,11 @@ public class MainActivity extends Activity {
 
         getQuestionFromDB();
 
-        ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_main_imageview_avatar));
+        if (!Uname.contentEquals("")) {
+            ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_main_imageview_avatar));
+        } else {
+            ((CircleImageView) findViewById(R.id.activity_main_imageview_avatar)).setVisibility(View.INVISIBLE);
+        }
 
         mediaPlayer = MediaPlayer.create(this, R.raw.reloj);
         mal_conestado = MediaPlayer.create(this, R.raw.mal_conestado);
@@ -180,14 +171,10 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onPostCreate(savedInstanceState, persistentState);
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
-        mFasterAnimationsContainer.stop();
+        anim.stop();
+        System.gc();
     }
 
     private void startActivity() {

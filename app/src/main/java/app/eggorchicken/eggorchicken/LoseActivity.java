@@ -85,6 +85,12 @@ public class LoseActivity extends Activity {
             }
         });
 
-        ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_loose_imageview_avatar));
+        if (!Uname.contentEquals("")) {
+            ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_loose_imageview_avatar));
+        } else {
+            ((CircleImageView) findViewById(R.id.activity_loose_imageview_avatar)).setVisibility(View.INVISIBLE);
+            ((TextView) findViewById(R.id.activity_loose_textview_btncompartir)).setVisibility(View.INVISIBLE);
+            ((ImageButton) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
+        }
     }
 }
