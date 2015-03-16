@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,7 +60,7 @@ public class WonActivity extends Activity {
                 params.putString("description", "Tienes 20 segundos para responder la mayor cantidad de afirmaciones reconociendo cuales son verdaderas o falsas! Encuentra una variedad temas muy diferentes para poner a prueba tus conocimientos.\n" +
                         "Juega ahora y pon aprueba tus conocimientos!.");
                 params.putString("link", "https://play.google.com/store/apps/details?id=app.eggorchicken.eggorchicken");
-//                params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+                params.putString("picture", "https://lh3.ggpht.com/xvYbt8ueE4Ajk4TbB9NADWll6UaM7qYEp8p4vtGexihwxMhqUq7kh3GfLNq-L3bjTSc=w300");
 
                 WebDialog feedDialog = (new WebDialog.FeedDialogBuilder(WonActivity.this, Session.getActiveSession(), params))
                         .setOnCompleteListener(new WebDialog.OnCompleteListener() {
