@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,10 +40,10 @@ public class WonActivity extends Activity {
 
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_ganaste), getString(R.string.activity_congrats_ganaste));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_si_respondiste), getString(R.string.activity_congrats_respondiste10));
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_compartir), getString(R.string.activity_congrats_btn_compartir));
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_textview_volver_a_jugar), getString(R.string.activity_congrats_btn_vuelve));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_imagebutton_boton_compartir), getString(R.string.activity_congrats_btn_compartir));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_congrats_imagebutton_boton_volver_a_jugar), getString(R.string.activity_congrats_btn_vuelve));
 
-        ((ImageButton) findViewById(R.id.activity_congrats_imagebutton_boton_volver_a_jugar)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.activity_congrats_imagebutton_boton_volver_a_jugar)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WonActivity.this, MainActivity.class));
@@ -50,7 +51,7 @@ public class WonActivity extends Activity {
             }
         });
 
-        ((ImageButton) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle params = new Bundle();
@@ -93,8 +94,8 @@ public class WonActivity extends Activity {
             ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_congrats_imageview_avatar));
         } else {
             ((CircleImageView) findViewById(R.id.activity_congrats_imageview_avatar)).setVisibility(View.INVISIBLE);
-            ((TextView) findViewById(R.id.activity_congrats_textview_compartir)).setVisibility(View.INVISIBLE);
-            ((ImageButton) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
+            ((TextView) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
+            ((Button) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
         }
 
 

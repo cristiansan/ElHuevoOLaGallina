@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -32,9 +33,11 @@ public class WelcomeActivity extends Activity {
         String strMeatFormat = getResources().getString(R.string.activity_welcome_hello);
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_tittle_top_bienvenido), String.format(strMeatFormat, Uname));
 
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_facebook), getResources().getString(R.string.activity_welcome_btn_start));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_imagebutton_boton_facebook), getResources().getString(R.string.activity_welcome_btn_start));
+        //Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_welcome_textview_comojugar), getResources().getString(R.string.activity_welcome_text));
 
-        ((ImageButton) findViewById(R.id.activity_welcome_imagebutton_boton_facebook)).setOnClickListener(new View.OnClickListener() {
+
+        ((Button) findViewById(R.id.activity_welcome_imagebutton_boton_facebook)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));

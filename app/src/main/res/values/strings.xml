@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ElHuevoLaGallina</string>
+    <string name="app_name">El Huevo o La Gallina</string>
 
     <string name="action_settings">Settings</string>
 
@@ -22,6 +22,7 @@
 
     <string name="activity_welcome_hello">¡HOLA, %1$s!</string>
     <string name="activity_welcome_btn_start">¡EMPEZAR A JUGAR!</string>
+    <string name="activity_welcome_text">Responde 10 preguntas correctamente en menos de 20 segundos.</string>
 
 
     <string name="facebook_app_id">759304170844236</string>
