@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         release {
-            storeFile file('D:/backup/galicia.key')
+            storeFile file('G:/Users/Horace/Downloads/galicia.key')
             keyAlias 'galicia'
             keyPassword '3h0qt0c@'
             storePassword '3h0qt0c@'
@@ -35,4 +35,5 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:3.23.1'
     compile 'com.google.apis:google-api-services-plus:v1-rev215-1.19.1'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.google.android.gms:play-services-ads:6.5.87'
 }
