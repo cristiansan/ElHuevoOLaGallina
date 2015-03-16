@@ -42,7 +42,10 @@ public class MainActivity extends Activity {
         anim.setOnClickListener(new AnimationsContainer.OnAnimationStoppedListener() {
             @Override
             public void AnimationStopped() {
-                anim.stop();
+            }
+
+            @Override
+            public void AnimationFinished() {
                 startActivity(new Intent(MainActivity.this, LoseActivity.class));
                 finish();
             }
