@@ -16,6 +16,7 @@ public class AnimationsContainer {
     public interface OnAnimationStoppedListener {
 
         public void AnimationStopped();
+        public void AnimationFinished();
 
     }
 
@@ -104,7 +105,7 @@ public class AnimationsContainer {
             if (mIndex >= mFrames.length) {
                 mIndex = mFrames.length-1;
                 stop();
-//                mOnAnimationStoppedListener.AnimationStopped();
+                mOnAnimationStoppedListener.AnimationFinished();
             }
             return mFrames[mIndex];
         }
