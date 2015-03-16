@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
     private MediaPlayer mediaPlayer;
     private MediaPlayer mal_conestado;
     private AnimationsContainer.FramesSequenceAnimation anim;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -13,6 +13,8 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Session;
 import com.facebook.widget.WebDialog;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -21,6 +23,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by XXX on 3/13/2015.
  */
 public class WonActivity extends Activity {
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,5 +97,9 @@ public class WonActivity extends Activity {
             ((ImageButton) findViewById(R.id.activity_congrats_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
         }
 
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.setAdListener(new ToastAdListener(this));
+        mAdView.loadAd(new AdRequest.Builder().build());
     }
 }
