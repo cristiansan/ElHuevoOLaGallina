@@ -83,7 +83,7 @@
         android:layout_alignEnd="@+id/activity_congrats_imagebutton_boton_compartir"
         android:layout_alignLeft="@+id/activity_congrats_imagebutton_boton_compartir"
         android:layout_alignStart="@+id/activity_congrats_imagebutton_boton_compartir"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="55dp" />
 
     <TextView
         android:layout_width="wrap_content"
