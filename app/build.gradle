@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         release {
-            storeFile file('G:/Users/Horace/Downloads/galicia.key')
+            storeFile file('D:/backup/galicia.key')
             keyAlias 'galicia'
             keyPassword '3h0qt0c@'
             storePassword '3h0qt0c@'

@@ -121,7 +121,7 @@
         android:id="@+id/activity_loose_textview_perdiste"
         android:textStyle="bold"
         android:textSize="45dp"
-        android:textColor="#f44336"
+        android:textColor="#ff0000"
         android:textIsSelectable="false"
         android:layout_below="@+id/activity_loose_imageview_reloj"
         android:layout_centerHorizontal="true" />
@@ -150,274 +150,89 @@
         android:layout_alignLeft="@+id/activity_loose_imageview_logo"
         android:layout_alignStart="@+id/activity_loose_imageview_logo"
         android:layout_marginLeft="10dp"
-        app:border_width="2dp"
-        app:border_color="#FF000000" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong1"
-        android:src="@drawable/answer_1_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct1"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct1"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct1" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong2"
-        android:src="@drawable/answer_2_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct2"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct2"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct2" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong3"
-        android:src="@drawable/answer_3_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct3"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct3"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct3" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong4"
-        android:src="@drawable/answer_4_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct4"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct4"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct4" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong5"
-        android:src="@drawable/answer_5_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="5dp" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong6"
-        android:src="@drawable/answer_6_wrong"
-        android:layout_below="@+id/activity_loose_imageview_answer_wrong2"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct6"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct6" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong7"
-        android:src="@drawable/answer_7_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct7"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct7"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct7" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong8"
-        android:src="@drawable/answer_8_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct8"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct8"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct8" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong9"
-        android:src="@drawable/answer_9_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct9"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_correct9"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_correct9" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_wrong10"
-        android:src="@drawable/answer_10_wrong"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_correct10"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="5dp" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct1"
-        android:src="@drawable/answer_1_correct"
-        android:layout_above="@+id/activity_loose_imageview_answer_wrong6"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_wrong6"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_wrong6" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct2"
-        android:src="@drawable/answer_2_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting2"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting2"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting2" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct3"
-        android:src="@drawable/answer_3_correct"
-        android:layout_above="@+id/activity_loose_imageview_answer_wrong8"
-        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_wrong4"
-        android:layout_toStartOf="@+id/activity_loose_imageview_answer_wrong4" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct4"
-        android:src="@drawable/answer_4_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting4"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting4"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting4" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct5"
-        android:src="@drawable/answer_5_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="5dp" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct6"
-        android:src="@drawable/answer_6_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong7"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting6"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting6" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct7"
-        android:src="@drawable/answer_7_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting7"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting7"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting7" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct8"
-        android:src="@drawable/answer_8_correct"
-        android:layout_below="@+id/activity_loose_imageview_answer_wrong4"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting8"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting8" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct9"
-        android:src="@drawable/answer_9_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong10"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting9"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting9" />
-
-    <ImageView
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:id="@+id/activity_loose_imageview_answer_correct10"
-        android:src="@drawable/answer_10_correct"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting10"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="5dp" />
+        app:border_width="5dp"
+        app:border_color="#730EAD" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting1"
         android:src="@drawable/answer_1_waiting"
-        android:layout_above="@+id/activity_loose_imageview_answer_wrong6"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_wrong6"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_wrong6" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting2"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting2"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting2" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting2"
         android:src="@drawable/answer_2_waiting"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong3"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_wrong7"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_wrong7" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting3"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting3"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting3" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting3"
         android:src="@drawable/answer_3_waiting"
-        android:layout_above="@+id/activity_loose_imageview_answer_wrong8"
-        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_wrong4"
-        android:layout_toStartOf="@+id/activity_loose_imageview_answer_wrong4" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting4"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting4"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting4" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting4"
         android:src="@drawable/answer_4_waiting"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong5"
-        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_wrong5"
-        android:layout_toStartOf="@+id/activity_loose_imageview_answer_wrong5" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting5"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting5"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting5" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting5"
         android:src="@drawable/answer_5_waiting"
-        android:layout_above="@+id/activity_loose_imageview_answer_wrong10"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="5dp" />
+        android:layout_above="@+id/activity_loose_imageview_answer_waiting10"
+        android:layout_alignLeft="@+id/activity_loose_imageview_answer_waiting10"
+        android:layout_alignStart="@+id/activity_loose_imageview_answer_waiting10" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting6"
         android:src="@drawable/answer_6_waiting"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong7"
-        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_wrong7"
-        android:layout_toStartOf="@+id/activity_loose_imageview_answer_wrong7" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting7"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting7"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting7" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting7"
         android:src="@drawable/answer_7_waiting"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong8"
-        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_wrong8"
-        android:layout_toStartOf="@+id/activity_loose_imageview_answer_wrong8" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting8"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting8"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting8" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting8"
         android:src="@drawable/answer_8_waiting"
-        android:layout_alignTop="@+id/activity_loose_imageview_answer_wrong9"
-        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_wrong9"
-        android:layout_toStartOf="@+id/activity_loose_imageview_answer_wrong9" />
+        android:layout_alignTop="@+id/activity_loose_imageview_answer_waiting9"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting9"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting9" />
 
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:id="@+id/activity_loose_imageview_answer_waiting9"
         android:src="@drawable/answer_9_waiting"
-        android:layout_below="@+id/activity_loose_imageview_answer_wrong4"
-        android:layout_alignLeft="@+id/activity_loose_imageview_answer_wrong4"
-        android:layout_alignStart="@+id/activity_loose_imageview_answer_wrong4" />
+        android:layout_below="@+id/activity_loose_imageview_answer_waiting5"
+        android:layout_toLeftOf="@+id/activity_loose_imageview_answer_waiting10"
+        android:layout_toStartOf="@+id/activity_loose_imageview_answer_waiting10" />
 
     <ImageView
         android:layout_width="22dp"
