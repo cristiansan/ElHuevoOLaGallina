@@ -195,16 +195,17 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_centerHorizontal="true"
         android:layout_above="@+id/adView"
-        android:layout_below="@+id/activity_loose_textview_no_respondiste">
+        android:layout_below="@+id/activity_loose_textview_no_respondiste"
+        android:layout_centerInParent="true"
+        android:gravity="center">
 
         <FrameLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:layout_width="wrap_content"
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:id="@+id/activity_loose_imagebutton_boton_compartir"
                 android:background="@drawable/boton_compartir"
@@ -215,29 +216,19 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginRight="10dp"
                 android:text="@string/activity_congrats_btn_compartir"
-                android:id="@+id/activity_loose_textview_btncompartir"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_centerHorizontal="true"
-                android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_compartir"
-                android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_compartir"
                 android:textSize="22dp"
-                android:textColor="#ffffff"
-                android:layout_gravity="top|center_horizontal" />
+                android:textColor="#ffffff"/>
+
+
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
                 android:id="@+id/activity_loose_imagebutton_boton_volver_a_jugar"
@@ -249,22 +240,12 @@
                 android:layout_alignStart="@+id/activity_congrats_imagebutton_boton_compartir"
                 android:layout_marginBottom="55dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginRight="10dp"
                 android:text="@string/activity_congrats_btn_vuelve"
-                android:id="@+id/activity_loose_textview_btn_volver_a_jugar"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_alignTop="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
-                android:layout_centerHorizontal="true"
-                android:layout_alignBottom="@+id/activity_congrats_imagebutton_boton_volver_a_jugar"
                 android:textSize="21dp"
-                android:textColor="#ffffff"
-                android:layout_gravity="center_horizontal|top" />
+                android:textColor="#ffffff"/>
+
+
 
         </FrameLayout>
 

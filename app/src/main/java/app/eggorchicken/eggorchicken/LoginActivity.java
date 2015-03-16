@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,10 +31,10 @@ public class LoginActivity extends Activity {
 
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido), getString(R.string.activity_login_bienvenido));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_tittledown_ingresa_usuario), getString(R.string.activity_login_ingresar_usuario));
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_facebook), getString(R.string.activity_login_btn_facebook));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_imagebutton_boton_facebook), getString(R.string.activity_login_btn_facebook));
 //        Common.SetFontTextView(this,(TextView) findViewById(R.id.activity_login_textview_tittle_top_bienvenido));
 
-        ImageButton facebook = (ImageButton) findViewById(R.id.activity_login_imagebutton_boton_facebook);
+        Button facebook = (Button) findViewById(R.id.activity_login_imagebutton_boton_facebook);
         facebook.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -66,9 +67,9 @@ public class LoginActivity extends Activity {
             }
 
         });
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_textview_anonimo), getString(R.string.activity_login_btn_anonimo));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_login_imagebutton_boton_anonimo), getString(R.string.activity_login_btn_anonimo));
 
-        ImageButton google = (ImageButton) findViewById(R.id.activity_login_imagebutton_boton_anonimo);
+        Button google = (Button) findViewById(R.id.activity_login_imagebutton_boton_anonimo);
         google.setOnClickListener(new View.OnClickListener() {
 
             @Override

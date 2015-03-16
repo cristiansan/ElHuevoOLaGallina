@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,10 +41,10 @@ public class LoseActivity extends Activity {
 
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_perdiste), getString(R.string.activity_loose_perdiste));
         Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_no_respondiste), getString(R.string.activity_loose_no_respondiste10));
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_btncompartir), getString(R.string.activity_congrats_btn_compartir));
-        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_textview_btn_volver_a_jugar), getString(R.string.activity_congrats_btn_vuelve));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_imagebutton_boton_compartir), getString(R.string.activity_congrats_btn_compartir));
+        Common.SetFontTextView(this, (TextView) findViewById(R.id.activity_loose_imagebutton_boton_volver_a_jugar), getString(R.string.activity_congrats_btn_vuelve));
 
-        ((ImageButton) findViewById(R.id.activity_loose_imagebutton_boton_volver_a_jugar)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.activity_loose_imagebutton_boton_volver_a_jugar)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoseActivity.this, MainActivity.class));
@@ -51,7 +52,7 @@ public class LoseActivity extends Activity {
             }
         });
 
-        ((ImageButton) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle params = new Bundle();
@@ -94,8 +95,8 @@ public class LoseActivity extends Activity {
             ImageLoader.getInstance().displayImage(String.format("http://graph.facebook.com/%s/picture?type=square", Id), (CircleImageView) findViewById(R.id.activity_loose_imageview_avatar));
         } else {
             ((CircleImageView) findViewById(R.id.activity_loose_imageview_avatar)).setVisibility(View.INVISIBLE);
-            ((TextView) findViewById(R.id.activity_loose_textview_btncompartir)).setVisibility(View.INVISIBLE);
-            ((ImageButton) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
+            ((TextView) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
+            ((Button) findViewById(R.id.activity_loose_imagebutton_boton_compartir)).setVisibility(View.INVISIBLE);
         }
 
         mAdView = (AdView) findViewById(R.id.adView);
