@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -75,6 +74,11 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 ((ProgressBar) findViewById(R.id.progressBarSplash)).setVisibility(View.VISIBLE);
+
+                SharedPreferences userDetails = getApplicationContext().getSharedPreferences("userdetails", MODE_PRIVATE);
+                SharedPreferences.Editor edit = userDetails.edit();
+                edit.clear();
+                edit.commit();
 
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
